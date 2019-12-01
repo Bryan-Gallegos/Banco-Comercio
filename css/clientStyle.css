@@ -1,0 +1,93 @@
+body{
+  font-family: Arial;
+  padding:0;
+  margin:0;
+  background:#F0F0F0;
+}
+
+
+a{
+  color:#C11C23;
+}
+
+#contenedor{
+  border-top: #000000 40px solid;
+ margin:0px auto;
+text-align:center;
+}
+#contenedor p{
+  font-size: 20px;
+  color:#C7161E;
+
+}
+#c1{
+  display:inline-block;
+  padding-left:200px;
+  padding-top: 100px;
+  float:left;
+  width:40%;
+}
+input ,select{
+  background-color: #D3D3D3;
+  border-radius:0px 10px 10px 0px;
+  width: 300px;
+  height: 35px;
+  border: none;
+  margin:4px;
+  padding-left: 8px;
+}
+input[type=submit]{
+  background-color:#C7161E;
+  border: none;
+  color: #D3D3D3;
+}
+input[type=submit]:hover{
+  color:white;
+  cursor: pointer;
+}
+#c2{
+  display:inline-block;
+  float:right;
+  padding-top: 70px;
+  padding-right: 20px;
+  width:40%;
+  
+}
+img{
+width:50%;
+height:50%;
+}
+.c1-2{
+  margin: 0px;
+  float:right;
+}
+.c1-2 button{
+  font-weight: bold;
+  background-color: #D3D3D3;
+  border-radius: 50%;
+  border: #D3D3D3 3px solid;
+  margin:2px
+
+}
+.c1-2 button:hover{
+  cursor:pointer;
+  border-color: #C7161E;
+  background-color: #C7161E;
+  color: #FFFFFF;
+}
+.c1-2 button:active{
+  font-weight: normal;
+}
+.c1-2 .borrar{
+  border-radius: 10px;
+  width: 60px;
+}
+
+/*c1-1*/
+/*.c1-1{
+  float: left;
+}*/
+
+.mitad{
+  width: 200px;
+}

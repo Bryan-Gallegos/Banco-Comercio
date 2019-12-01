@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head><title>Agregar Cuenta</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/bankStyle.css">
+</head>
+<body>
+<div class="c">
+<div class="c1">
+<h1>Usuario:</h1>
+<p id="user"></p>
+<p>Agregar Cuenta</p>
+<form id="f" action="cgi-bin/cuenta.pl">
+
+<input id="num" name="numero" maxlength="16" placeholder="Ingrese Numero"><br>
+<input id="divisa" name="moneda" maxlength="1" placeholder="Ingrese Moneda"><br>
+<div id="c1-1">
+<select name="tarjeta_id" >
+<option>Cargando...</option>
+</select><br>
+<select name="cliente_id">
+<option>Cargando...</option>
+</select><br>
+</div>
+<input type="hidden" id="userinput" name="usuario">
+<input type="button" value="Agregar" onClick="conf()">
+</form>
+</div>
+</div>
+<div style="margin-left:700px;padding-top:200px" id="confirmacion">
+</div>
+</body>
+<script src="js/username.js"></script>
+<script>
+function conf(){
+var divisa=document.getElementById("divisa").value;
+var num=document.getElementById("num").value;
+if(divisa && num){
+document.getElementById("f").submit();
+}else{
+document.getElementById("confirmacion").innerHTML="Ingrese datos faltantes";
+}
+}
+function getHttpObject(){
+        var XMLHttp;
+        if(window.XMLHttpRequest){
+                XMLHttp=new XMLHttpRequest();
+        }else{
+                XMLHttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        return XMLHttp;
+}
+
+var http=getHttpObject();
+
+function getData(){
+if(http){
+        var url="cgi-bin/select.pl";
+        http.onreadystatechange=function(){
+                var divElement=document.getElementById("c1-1");
+                if(http.readyState==4 && http.status==200){
+                        divElement.innerHTML=http.responseText;
+                }
+        };
+        http.open("GET",url,true);
+        http.send();
+}
+}
+getData();
+</script>
+</html>

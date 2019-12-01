@@ -1,0 +1,18 @@
+body { 
+  font: 75% georgia, sans-serif;
+  line-height: 1.88889;
+  color: #555753; 
+  background-color: #b0c4de;
+  margin: 0; 
+  padding: 0;
+}
+fieldset{ background-color: #6495ed; }
+legend{
+  color: white;
+  background-color: #6495ed;
+}
+h1{color: blue;}
+a:link {color:#FF0000;}
+a:visited {color:#00FF00;} 
+a:hover {color:#FF00FF;}
+a:active {color:#0000FF;}

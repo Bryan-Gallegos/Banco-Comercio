@@ -1,0 +1,20 @@
+#!/usr/bin/perl 
+use DBI;
+use CGI qw(:standard);
+$database='u20180571';
+$host='localhost';
+$port='3306';
+$password='zgW8kbjv';
+$username='u20180571';
+my $id=param('id');
+my $numero=param('numero');
+my $estado=param('estado');
+$dsn="DBI:mysql:database=$database;host=$host;port=$port";
+$dbh=DBI->connect($dsn,$username,$password);
+$sth=$dbh->prepare("UPDATE cards set Numero=\"$numero\", Estado=$estado where ID=$id");
+$sth->execute();
+$dbh->disconnect();
+print "Content-type:text/html\n\n";
+print "<!DOCTYPE html>\n";
+print "<html><head><meta http-equiv=\"refresh\" content=\"0; url=mostrarTarjetas.pl\"></head>\n";
+print "<body></body></html>";

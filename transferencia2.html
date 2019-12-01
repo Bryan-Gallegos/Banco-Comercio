@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Transferencia</title>
+<link rel="stylesheet" href="css/bankStyle.css">
+</head>
+<body>
+<div style="margin-left:550px; margin-top:200px">
+<h1>Realice su transferencia</h1>
+<form action="cgi-bin/transferencia.pl">
+	<h2>Numero de tarjeta</h2>
+	<p id="cardNum"></p>
+	<input type="text" name="amount" placeholder="Monto a transferir"><br>
+	<input type="text" name="destino" placeholder="Tarjeta de destino"><br>
+	<input type="hidden" id="cardInput" name="tarjeta">
+	<input type="submit" value="Transferir">
+</form>
+</div>
+</body>
+<script src="js/tarjeta.js"></script>
+</html>

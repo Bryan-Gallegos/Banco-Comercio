@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><title>Agregar Cuenta</title>
+<link rel="stylesheet" href="css/bankStyle.css">
+</head>
+<body>
+<div class="c">
+<div class="c1">
+<h1>Usuario:</h1>
+<p id="user"></p>
+<p>Agregar Cuenta</p>
+<form action="cgi-bin/cuenta.pl">
+
+<input name="numero" maxlength="16" placeholder="Ingrese Numero"><br>
+<input name="moneda" maxlength="1" placeholder="Ingrese Moneda"><br>
+<input name="tarjeta_id" maxlength="11" placeholder="Ingrese ID  de la tarjeta"><br>
+<input name="cliente_id" maxlength="11" placeholder="Ingrese ID de cliente"><br>
+<input type="hidden" id="userinput" name="usuario">
+<input type="submit" value="Agregar">
+</form>
+</div>
+</div>
+</body>
+<script src="js/username.js"></script>
+</html>

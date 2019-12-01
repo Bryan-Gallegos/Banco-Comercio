@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>Agregar Cliente</title>
+<link rel="stylesheet" href="css/bankStyle.css">
+</head>
+<body>
+<div class="c">
+<div class="c1">
+<h1>Usuario:</h1>
+<p id="user"></p>
+<p>Agregar Cliente</p>
+<form action="cgi-bin/cliente.pl">
+<input name="dni" maxlength="8" placeholder="Ingrese DNI"><br>
+<input name="nombres" maxlength="30" placeholder="Nombres"><br>
+<input name="paterno" maxlength="30" placeholder="Apellido Paterno"><br>
+<input name="materno" maxlength="30" placeholder="Apellido Materno"><br>
+<input type="date" name="nacim" placeholder="Nacimiento"><br>
+<input type="hidden" id="userinput" name="usuario">
+<input type="submit" value="Agregar">
+</form>
+</div>
+</div>
+</body>
+<script src="js/username.js"></script>
+</html>
+ 

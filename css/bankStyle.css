@@ -1,0 +1,114 @@
+body{
+  font-family: Arial;
+  padding:0;
+  margin:0;
+  background:#F0F0F0;
+}
+
+/*header*/
+
+header{
+  padding-top:35px;
+  padding-left: 50px;
+  padding-right: 50px;
+  color:#363C61;
+  border-bottom: #C7161E 40px solid;
+}
+a{
+  color:#C11C23;
+}
+header img {
+  display:inline-block;
+  margin-left: 500px;
+  vertical-align: middle;
+  width: 20%;
+  height: 20%;
+}
+header p{
+  font-weight: bold;
+
+  float:right;
+  display: inline-block;
+  vertical-align: middle;
+}
+.c{
+  border-bottom: #000000 40px solid;
+}
+.c p{
+  font-size: 20px;
+  text-align: center;
+  color:#C7161E;
+
+}
+.c1{
+  float:left;
+  padding-top: 100px;
+  padding-left: 300px;
+}
+input ,select{
+  background-color: #D3D3D3;
+  border-radius:0px 10px 10px 0px;
+  width: 300px;
+  height: 35px;
+  border: none;
+  margin:4px;
+  padding-left: 8px;
+}
+input[type=button]{
+  background-color:#C7161E;
+  border: none;
+  color: #D3D3D3;
+}
+input[type=button]:hover{
+  color:white;
+  cursor: pointer;
+}
+
+input[type=submit]{
+  background-color:#C7161E;
+  border: none;
+  color: #D3D3D3;
+}
+input[type=submit]:hover{
+  color:white;
+  cursor: pointer;
+}
+.c2{
+  float:right;
+  padding-top: 70px;
+  padding-right: 200px;
+}
+.c1-2{
+  margin: 0px;
+  float:right;
+}
+.c1-2 button{
+  font-weight: bold;
+  background-color: #D3D3D3;
+  border-radius: 50%;
+  border: #D3D3D3 3px solid;
+  margin:2px
+
+}
+.c1-2 button:hover{
+  cursor:pointer;
+  border-color: #C7161E;
+  background-color: #C7161E;
+  color: #FFFFFF;
+}
+.c1-2 button:active{
+  font-weight: normal;
+}
+.c1-2 .borrar{
+  border-radius: 10px;
+  width: 60px;
+}
+
+/*c1-1*/
+.c1-1{
+  float: left;
+}
+
+.mitad{
+  width: 200px;
+}

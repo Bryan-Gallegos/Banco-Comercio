@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Transferencia</title>
+<link rel="stylesheet" href="css/bankStyle.css">
+</head>
+<body>
+<div style="margin-left:550px; margin-top:200px">
+<h1>Realice su transferencia</h1>
+	<h2>Numero de tarjeta</h2>
+	<p id="cardNum"></p>
+	<input id="monto" type="text" name="amount" placeholder="Monto a transferir"><br>
+	<input id="destino" type="text" name="destino" placeholder="Tarjeta de destino" maxlength="16"><br>
+	<input type="button" value="Transferir" onClick="getData()">
+</div>
+<h1 style="text-align:center" id="confirmacion"></h1>
+</body>
+<script src="js/tarjeta2.js"></script>
+<script>
+function getHttpObject(){
+        var XMLHttp;
+        if(window.XMLHttpRequest){
+                XMLHttp=new XMLHttpRequest();
+        }else{
+                XMLHttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        return XMLHttp;
+}
+
+var http=getHttpObject();
+
+function getData(){
+var monto=document.getElementById("monto").value;
+var tarjeta=document.getElementById("cardNum").innerHTML;
+var destino=document.getElementById("destino").value;
+console.log(monto);
+console.log(tarjeta);
+if(monto && destino){
+if(http){
+        var url="cgi-bin/transferencia.pl?amount="+monto+"&destino="+destino+"&tarjeta="+tarjeta;
+        http.onreadystatechange=function(){
+                var divElement=document.getElementById("confirmacion");
+                if(http.readyState==4 && http.status==200){
+                        divElement.innerHTML=http.responseText;
+                }
+        };
+        http.open("GET",url,true);
+        http.send();
+}
+}else{
+document.getElementById("confirmacion").innerHTML="Ingrese datos faltantes";
+}
+}
+</script>
+
+</html>

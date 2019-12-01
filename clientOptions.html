@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Opciones del Cliente</title>
+<link rel="stylesheet" href="css/clientStyle.css">
+</head>
+<body>
+<div id="contenedor">
+<div id="c1" >
+<h1>Bienvenido</h1>
+<p>Numero de tarjeta:</p>
+<p id="cardNum"></p>
+<p>Seleccione su operacion:</p>
+<form id="f" action="deposito.html">
+<select id="sel" onchange="changeAction()">
+<option value="deposito">Deposito</option>
+<option value="transferencia">Transferencia</option>
+<option value="estado">Estado de cuenta</option>
+<option value="retiro">Retiro</option>
+</select><br>
+<input name="tarjeta" type="hidden" id="cardInput" value="">
+<script src="js/tarjeta.js"></script>
+<div id="c1-1">
+<input class="mitad" type="submit" value="Realizar operacion">
+</div>
+</form>
+<a href="cgi-bin/exit.pl">Cerrar Sesion</a>
+</div>
+<div id="c2">
+<img src="img/client.png" width="25%" height="25%">
+</div>
+</div>
+</body>
+<script>
+function changeAction(){
+	var val=document.getElementById("sel").value;
+	if(val!="estado"){
+		document.getElementById("f").action=val+".html";
+	}else{
+		document.getElementById("f").action="cgi-bin/"+val+".pl";		}
+} 
+</script>
+</html>
+

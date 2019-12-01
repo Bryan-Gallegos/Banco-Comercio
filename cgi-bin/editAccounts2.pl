@@ -1,0 +1,23 @@
+#!/usr/bin/perl 
+use DBI;
+use CGI qw(:standard);
+$database='u20180571';
+$host='localhost';
+$port='3306';
+$password='zgW8kbjv';
+$username='u20180571';
+my $id=param('id');
+my $numero=param('numero');
+my $estado=param('estado');
+my $moneda=param('moneda');
+my $tarjeta_id=param('tarjeta_id');
+my $cliente_id=param('cliente_id');
+$dsn="DBI:mysql:database=$database;host=$host;port=$port";
+$dbh=DBI->connect($dsn,$username,$password);
+$sth=$dbh->prepare("UPDATE accounts set Numero=\"$numero\", Estado=$estado, Moneda=\"$moneda\", Tarjeta_ID=$tarjeta_id, Cliente_ID=$cliente_id where ID=$id");
+$sth->execute();
+$dbh->disconnect();
+print "Content-type:text/html\n\n";
+print "<!DOCTYPE html>\n";
+print "<html><head><meta http-equiv=\"refresh\" content=\"0; url=mostrarCuentas.pl\"></head>\n";
+print "<body></body></html>";

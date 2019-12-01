@@ -1,0 +1,49 @@
+body{
+background: #F0F0F0;
+font-family:Arial;
+}
+h1,h2{
+color: #C7161E;
+}
+
+.n{
+color:black;
+}
+.cont{
+text-align:center;
+margin:0px auto;
+}
+.cont{
+display: flex;
+}
+#info, #tab{
+margin:100px;
+}
+#info2, #tab table{
+background:#FFFFFF;
+border-radius:30px;
+}
+table{
+border-radius:30px;
+border:none;
+box-shadow:2px 2px 5px #000;
+border-collapse:collapse;
+background:#FFF;
+overflow:hidden;
+}
+
+th, td{
+padding: 15px;
+}
+th{
+background: #C7161E;
+color:#FFF;
+}
+tr:hover{
+background: #F5F5F5;
+}
+.table{
+text-align:center;
+margin-top:50px;
+margin-left:200px;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><title>Agregar Tarjeta</title>
+<link rel="stylesheet" href="css/bankStyle.css">
+</head>
+<body>
+<div class="c">
+<div class="c1">
+<h1>Usuario:</h1>
+<p id="user"></p>
+<p>Agregar Tarjeta</p>
+<form action="cgi-bin/tarjeta.pl">
+<input name="numero" maxlength="16" placeholder="Ingrese Numero"><br>
+<input name="clave" maxlength="6" placeholder="Ingrese Clave"><br>
+<input type="hidden" id="userinput" name="usuario">
+<input type="submit" value="Agregar">
+</form>
+</div>
+</div>
+</body>
+<script src="js/username.js"></script>
+</html>

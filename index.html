@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Banco de Comercio</title>
+    <link rel="stylesheet" href="css/bankStyle.css">
+  </head>
+  <body>
+    <header>
+      <div>
+        <img src="img/logo.png" alt="Comercio">
+      </div>
+    </header>
+    <div class="c">
+      <div class="c1">
+        <p>BANCA VIRTUAL</p>
+        <form id="f" action="cgi-bin/clientlogin.pl">
+          <input name="tarjeta" placeholder="Ingresa tu número de tarjeta" maxlength="16"><br>
+          <div class="c1-1">
+            <input type="password" class="mitad" id="clave" name="clave" placeholder="Clave" readonly><br>
+            <input class="mitad" type="submit" value="Ingresar"><br>
+	    <a href="usuario.html">Solo personal autorizado</a>	
+          </div>
+          <div class="c1-2">
+            <button id="button0" onclick="writes(this)" type="button" value="#">#</button>
+            <button id="button1" onclick="writes(this)" type="button" value="#">#</button>
+            <button id="button2" onclick="writes(this)" type="button" value="#">#</button><br>
+            <button id="button3" onclick="writes(this)" type="button" value="#">#</button>
+            <button id="button4" onclick="writes(this)" type="button" value="#">#</button>
+            <button id="button5" onclick="writes(this)" type="button" value="#">#</button><br>
+            <button id="button6" onclick="writes(this)" type="button" value="#">#</button>
+            <button id="button7" onclick="writes(this)" type="button" value="#">#</button>
+            <button id="button8" onclick="writes(this)" type="button" value="#">#</button><br>
+            <button id="button9" onclick="writes(this)" type="button" value="#">#</button>
+            <button class="borrar" onclick="erase()" type="button" value="Borrar">Borrar</button>
+          </div>
+        </form>
+      </div>
+      <div class=c2>
+        <img src="img/tipa.JPG" alt="Mujer-laptop">
+      </div>
+    </div>
+  </body>
+  <script src="js/teclado.js"></script>
+</html>

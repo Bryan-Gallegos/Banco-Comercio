@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Retiro</title>
+<link rel="stylesheet" href="css/bankStyle.css">
+</head>
+<body>
+<div style="margin-left:550px; margin-top:200px" >
+<h1>Realizar retiro:</h1>
+<p>Numero de tarjeta:</p>
+<p id="cardNum"></p>
+<form action="cgi-bin/retiro.pl">
+        <input type="hidden" name="tarjeta" id="cardInput">
+        <input type="text" name="amount" placeholder="Ingrese monto"><br>
+        <input type="submit" value="Retirar">
+</form>
+</div>
+<script src="js/tarjeta.js"></script>
+</body>
+</html>
+
+

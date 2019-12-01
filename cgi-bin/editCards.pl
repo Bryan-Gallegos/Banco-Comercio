@@ -1,0 +1,54 @@
+#!/usr/bin/perl
+use CGI;
+use DBI;
+$hostname="localhost";
+$username="u20180571";
+$password="zgW8kbjv";
+$database="u20180571";
+$dsn="DBI:mysql:database=$database;host=$hostname;port=$port";
+$dbh=DBI->connect($dsn,$username,$password);
+
+$sth=$dbh->prepare("select ID,Numero,Estado from cards");
+$sth->execute();
+print "Content-type:text/html\n\n";
+print "<!DOCTYPE html>\n";
+print "<html><head><title>Editar Tarjetas</title>\n";
+print "<link rel='stylesheet' href='../css/bankStyle.css'></head>\n";
+print "<body>\n";
+print "<div class='c'>\n";
+print "<div class='c1'>\n";
+print "<h1>Editar Tarjetas</h1>\n";
+print "<form action='editCards2.pl'>\n";
+print "<select onChange='fillValues()' id='card_id' name='select'>\n";
+while(@cards=$sth->fetchrow_array()){
+	print "<option value=\"$cards[0],$cards[1],$cards[2]\">$cards[1]</option>\n";
+}
+print "</select><br>\n";
+print "<input type='hidden' id='id' name='id'><br>\n";
+print "Numero:<input id='numero' name='numero'><br>\n";
+print "Estado:<input id='estado' name='estado'><br>\n";
+print "<input type='submit' value='Guardar cambios'><br>\n";
+print "<input type='button' value='Deshacer cambios' onClick='fillValues()'><br>\n";
+print "</form>\n";
+print "</div>\n";
+print "</div>\n";
+print "</body>\n";
+print "<script>";
+print "function fillValues(){\n";
+print "var arr=[3];";
+print "var data=document.getElementById('card_id').value;\n";
+print "for(var i=0;i<3;i++){";
+print "var index=data.indexOf(',');";
+print "if(index!=-1){";
+print "arr[i]=data.substring(0,index);";
+print "data=data.substring(index+1,data.length);";
+print "}else{";
+print "arr[i]=data}";
+print "document.getElementById('id').value=arr[0];\n";
+print "document.getElementById('numero').value=arr[1];\n";
+print "document.getElementById('estado').value=arr[2];\n";
+print "}";
+print "}\n";
+print "fillValues();";
+print "</script>\n";
+print "</html>";
